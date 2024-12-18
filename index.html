@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Game</h1>
+    <p>Please enter the password to start the game:</p>
+    <input type="password" id="password" placeholder="Enter password" />
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error-message" class="error-message"></p>
+
+    <script>
+        // The correct password for access
+        const correctPassword = "letmein123";
+
+        function checkPassword() {
+            // Get the entered password from the input field
+            const enteredPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Check if the entered password matches the correct password
+            if (enteredPassword === correctPassword) {
+                // Redirect to the game page
+                window.location.href = "game.html"; // Replace with your actual game link
+            } else {
+                // Display an error message
+                errorMessage.textContent = "Incorrect password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
